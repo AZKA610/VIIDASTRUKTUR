@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VII DAWAN ANWAR</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', sans-serif;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        color: #333;
+    }
+
+    header {
+        text-align: center;
+        padding: 20px;
+        color: white;
+    }
+
+    h1 {
+        margin: 0;
+    }
+
+    .container {
+        max-width: 1100px;
+        margin: auto;
+        padding: 20px;
+    }
+
+    .card {
+        background: white;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 15px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    h2 {
+        border-left: 5px solid #667eea;
+        padding-left: 10px;
+        margin-bottom: 15px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+        text-align: center;
+    }
+
+    th {
+        background: #667eea;
+        color: white;
+    }
+
+    tr:hover {
+        background: #f1f1f1;
+    }
+
+    .badge {
+        display: inline-block;
+        padding: 5px 10px;
+        background: #764ba2;
+        color: white;
+        border-radius: 20px;
+        font-size: 12px;
+    }
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>VII DAWAM ANWAR</h1>
+    <p class="badge">STRUKTUR KELAS</p>
+</header>
+
+<div class="container">
+
+    <!-- Wali Kelas -->
+    <div class="card">
+        <h2>Wali Kelas</h2>
+        <table>
+            <tr><th>Nama</th><th>Mata Pelajaran</th></tr>
+            <tr><td>Pak Imam khamdani</td><td>Aswaja</td></tr>
+        </table>
+    </div>
+
+    <!-- Struktur Kelas -->
+    <div class="card">
+        <h2>Struktur Kelas</h2>
+        <table>
+            <tr><th>Jabatan</th><th>Nama</th></tr>
+            <tr><td>Ketua Kelas</td><td>Muhammad Luthofau Miskana</td></tr>
+            <tr><td>Wakil Ketua</td><td>Rasya Dwiki</td></tr>
+            <tr><td>Sekretaris</td><td>Rizky Aditya,Farzan Ahza</td></tr>
+            <tr><td>Keamanan</td><td>Luqman</td></tr>
+        </table>
+    </div>
+
+    <!-- Jadwal Pelajaran -->
+    <div class="card">
+        <h2>Jadwal Pelajaran</h2>
+        <table>
+            <tr><th>Hari</th><th>Jadwal Pelajaran</th></tr>
+            <tr><td>Senin</td><td>MTK,Tajwid,PJOK,SBK</td></tr>
+            <tr><td>Selasa</td><td>Fiqih,Qurdis,Bahasa Indonesia,Aqidah A</td></tr>
+            <tr><td>Rabu</td><td>Ipa,Ingrris,IPS</td></tr>
+            <tr><td>Kamis</td><td>PKN,IPA,Aswaja,Imla</td></tr>
+            <tr><td>Jumat</td><td>TIK,Bahasa Indonesia,SKI</td></tr>
+            <tr><td>Sabtu</td><td>Nahwu,Arabic,Thafidz,MTK</td></tr>
+        </table>
+    </div>
+
+    <!-- Petugas Piket -->
+    <div class="card">
+        <h2>Petugas Piket</h2>
+        <table>
+            <tr><th>Hari</th><th>Petugas</th></tr>
+            <tr><td>Senin</td><td>Arya,DEvan,Dzakwan,Fahri,Evran,Faeza</td></tr>
+            <tr><td>Selasa</td><td>Fahmi,Fairuz,Faqih,Faras,Farzan,Hafidz</td></tr>
+            <tr><td>Rabu</td><td>Habibie,Haidar,Havilah,Khaizan,levi,Luqman</td></tr>
+            <tr><td>Kamis</td><td>Haqi,Rizky,Septian,Luthofau,Fadlan,Fadhil</td></tr>
+            <tr><td>Jumat</td><td>Fajri,Alwi,Azka,Hafidz Azka,Syafik,Wahyu</td></tr>
+            <tr><td>Sabtu</td><td>Naufal,Ramadan,Prabu,Rahmat,Rasya,Sabas</td></tr>
+        </table>
+    </div>
+
+    <!-- Daftar Siswa -->
+    <div class="card">
+        <h2>Daftar Siswa (36 Orang)</h2>
+        <table>
+            <tr><th>No</th><th>Nama</th></tr>
+            <tbody id="siswaList"></tbody>
+        </table>
+    </div>
+
+</div>
+
+<script>
+    let siswa = [
+        "Arya Saputra","Devan Navaro","Dzakwanul Karim","Ernanda Fakhrizal","Evran Maulana","Faeza Banyu","Fahmi Haidar","Fairuz Zulfan","Faqih Anwar",
+        "Farras Akram","Farzan Ahza","Hafidz Febriansyah"," Habbie Aqilla","Haidar Musyafa","Havilah Althaf","Khaizan Alfandy","Kholifatur Fahlevi","Luqman Nulhakim",
+        "Muhammad Rafi Baihaqi","Muhammad Rizky Aditya","Muhammad Septian Maulana","Muhammad Luthofau Mizkana","Muhammad FADHIL Anaqi","Muhammad Fadlan Zaidan","Muhammad Ainur Fajri","Muhammad Alwi",
+        "Muhammad Azka Hafidzuddin","Muhammad Hafidz Azka","Muhammad Zidan Asyafik","Muhammad Wahyu","Naufal Muyasar","Nur Muhammad Ramadan","Prabu Arya","Rahmat Afriyan","Rasya Dwiki","Rayhan Sabas"
+    ];
+
+    let output = "";
+    siswa.forEach((nama, i) => {
+        output += `<tr><td>${i+1}</td><td>${nama}</td></tr>`;
+    });
+
+    document.getElementById("siswaList").innerHTML = output;
+</script>
+
+</body>
+</html>
